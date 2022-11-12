@@ -9,8 +9,8 @@
 header {
   display: flex;
   justify-content: space-between;
-  background-color: black;
-  color: white;
+  background-color: #d9d9d9;
+  color: purple;
   grid-column: 1 / span 2;
   padding: 10px 5px;
 }
@@ -28,6 +28,10 @@ form textarea {
   width: 300px;
 }
 
+p {
+  width: fit-content;
+}
+
 nav,
 article {
   height: 100%;
@@ -35,10 +39,14 @@ article {
 }
 
 nav {
-  background-color: #dee9ff;
+  background-color: #ededed;
 }
 
-nav p:hover {
+.link {
+  cursor: pointer;
+}
+
+nav li:hover {
   text-decoration: underline;
   cursor: pointer;
 }
@@ -55,4 +63,14 @@ article .body {
   background-color: red;
   color: gold;
   padding: 5px;
+}
+
+button {
+  color: white;
+  border-radius: 25px;
+  background-color: #762dd2;
+  padding: 5px;
+  margin: 5px;
+  border: 0;
+  font-weight: bold;
 }

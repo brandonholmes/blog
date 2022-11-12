@@ -1,4 +1,13 @@
-export default function Article({ article }) {
+import { format } from "date-fns";
+
+export default function Article({ article, setWriting }) {
+  let formattedDate;
+  if (article) {
+    let d = new Date(
+      article.date.seconds * 1000 + article.date.nanoseconds / 1000000
+    );
+    formattedDate = format(d, "MM/dd/yyyy h:mm a");
+  }
   return (
     <article>
       {!article ? (
@@ -6,7 +15,7 @@ export default function Article({ article }) {
       ) : (
         <section>
           <h2>{article.title}</h2>
-          <p className="date">{`Posted: ${article.date}`}</p>
+          <p className="date">{`Posted: ${formattedDate}`}</p>
           <p className="body">{article.body}</p>
         </section>
       )}

@@ -1,12 +1,18 @@
-export default function Nav({ articles, setArticle }) {
+export default function Nav({ articles, setArticle, auth, setWriting }) {
   return (
     <nav>
+      <p>
+        <b>Hello, {auth.currentUser.displayName}</b>
+      </p>
+      <p>
+        <u>My Articles</u>
+      </p>
       {!articles
         ? "No articles"
         : articles.map((a) => (
-            <p key={a.id} onClick={() => setArticle(a)}>
+            <li key={a.id} onClick={() => setArticle(a)}>
               {a.title}
-            </p>
+            </li>
           ))}
     </nav>
   );
